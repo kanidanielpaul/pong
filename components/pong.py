@@ -17,9 +17,22 @@ class Pong:
 
     def startGame(self):
         self.deleteAllExistingComponents()
-        p1 = paddle.Paddle(self.canvas,0,10)
-        p2 = paddle.Paddle(self.canvas,990,10)
-        b = ball.Ball(self.canvas,50,50)
+        self.p1 = paddle.Paddle(self.canvas,0,10)
+        self.p2 = paddle.Paddle(self.canvas,990,10)
+        self.b = ball.Ball(self.canvas,50,50)
+        self.root.bind("<Key>",self.keyboardAction)
+
+    def keyboardAction(self,event):
+        if (event.keysym=="Up"):
+            self.p1.up()
+        elif (event.keysym=="Down"):
+            self.p1.down()
+        elif (event.keysym=="w"):
+            self.p2.up()
+        elif (event.keysym=="s"):
+            self.p2.down()
+        else:
+            print(event)
 
     def deleteAllExistingComponents(self):
         for item in self.canvasGarbageCollector:

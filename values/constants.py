@@ -10,6 +10,7 @@ class Constants:
         PADDLE_WIDTH = 10
         PADDLE_HEIGHT = 50
         PADDLE_COLOR = "white"
+        PADDLE_SPEED = 5
 
     class BallConstants:
         BALL_WIDTH = 15
