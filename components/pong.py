@@ -1,6 +1,6 @@
 import tkinter
 from values import constants
-from components import paddle
+from components import paddle, ball
 
 class Pong:
     allConstants = constants.Constants()
@@ -13,12 +13,13 @@ class Pong:
         self.root.configure(bg=self.allConstants.WindowConstants.BACKGROUND_COLOR)
         self.canvas = tkinter.Canvas(self.root,bg=self.allConstants.WindowConstants.BACKGROUND_COLOR,height=self.allConstants.WindowConstants.HEIGHT, width=self.allConstants.WindowConstants.WIDTH)
         self.canvas.grid(row=0,column=0,sticky="nesw")
-        self.startGame()
+        self.canvas.create_line(int(self.allConstants.WindowConstants.WIDTH/2),0,int(self.allConstants.WindowConstants.WIDTH/2),self.allConstants.WindowConstants.HEIGHT, fill=self.allConstants.PaddleConstants.PADDLE_COLOR)
 
     def startGame(self):
         self.deleteAllExistingComponents()
         p1 = paddle.Paddle(self.canvas,0,10)
         p2 = paddle.Paddle(self.canvas,990,10)
+        b = ball.Ball(self.canvas,50,50)
 
     def deleteAllExistingComponents(self):
         for item in self.canvasGarbageCollector:

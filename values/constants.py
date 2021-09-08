@@ -12,6 +12,6 @@ class Constants:
         PADDLE_COLOR = "white"
 
     class BallConstants:
-        BALL_WIDTH = 5
-        BALL_HEIGHT = 5
+        BALL_WIDTH = 15
+        BALL_HEIGHT = 15
         BALL_COLOR = "white"
