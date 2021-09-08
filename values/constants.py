@@ -8,7 +8,7 @@ class Constants:
 
     class PaddleConstants:
         PADDLE_WIDTH = 10
-        PADDLE_HEIGHT = 10
+        PADDLE_HEIGHT = 50
         PADDLE_COLOR = "white"
 
     class BallConstants:
